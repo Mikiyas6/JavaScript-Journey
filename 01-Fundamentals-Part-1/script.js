@@ -1,11 +1,18 @@
-console.log("My first JS code.");
+const age = 15;
 
-let firstName = "Jonas";
+if (age >= 18) {
+  console.log(`Sarah can now start driving`);
+} else {
+  console.log(`She has ${18 - age} years left`);
+}
 
-console.log(`My name is ${firstName}`);
+const birthYear = 1999;
+let century;
 
-console.log(`My name
-is 
-mikiyas
-tewodroes
-`);
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+
+console.log(century);
