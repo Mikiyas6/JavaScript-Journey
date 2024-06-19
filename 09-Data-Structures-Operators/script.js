@@ -1,0 +1,184 @@
+'use strict';
+
+// Data needed for first part of the section
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0,
+      close: 24,
+    },
+  },
+  orderDelivery: function ({
+    startIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    // console.log(time, startIndex);
+  },
+  orderPasta: function (
+    ing1 = 'No ingredient',
+    ing2 = 'No ingredient',
+    ing3 = 'No ingredient'
+  ) {
+    console.log(
+      `Here's your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
+    );
+  },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+};
+
+let [main, , secondary] = restaurant.categories;
+
+// console.log(main, secondary);
+
+[main, secondary] = [secondary, main];
+
+// console.log(main, secondary);
+
+const [starter, mainCourse] = restaurant.order(2, 0);
+
+// console.log(starter, mainCourse);
+
+const nested = [2, 4, [5, 6]];
+
+// const [first, , third] = nested;
+
+const [first, , [second, third]] = nested;
+
+// console.log(first, second, third);
+
+const [p = 1, q = 1, r = 1] = [8];
+
+// console.log(p, q, r);
+
+const {
+  name: restaurantName = '',
+  categories: tags = [],
+  openingHours: hours = {},
+} = restaurant;
+
+// console.log(restaurantName);
+// console.log(tags);
+// console.log(hours);
+
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+
+({ a, b } = obj);
+
+const {
+  fri: { open: o, close: c },
+} = hours;
+
+// const { open, close } = friday;
+
+// console.log(o, c);
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  startIndex: 2,
+});
+//  ... Used to create shallow copies for arrays, objects and even strings
+const arr = [1, 2, 3];
+const lists = [4, 5, 6];
+const array = [...arr, ...lists];
+// console.log(array);
+
+// Shallow Copy
+const anotherArray = [...array];
+// console.log(anotherArray);
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(menu);
+
+const string = 'Jonas';
+const stringArray = [...string];
+// console.log(stringArray);
+// console.log(...string);
+
+let ingredients = [];
+
+// alert(`Let's make pasta`);
+// for (let i = 0; i < 3; i++) {
+//   ingredients[i] = prompt(`Ingredient ${i + 1}`);
+// }
+
+// restaurant.orderPasta(...ingredients);
+
+const newRestaurant = { grith: 12, ...restaurant };
+// console.log(newRestaurant);
+
+const add = function (...numbers) {
+  let total = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    total += numbers[i];
+  }
+  console.log(total);
+};
+
+// const add = function (a, b, c) {
+//   console.log(a + b + c);
+// };
+const x = [23, 5, 7, 6, 8];
+
+// const [alo, ...others] = x;
+// console.log(alo);
+// console.log(others);
+
+// add(...x);
+// add(23, 5, 7);
+
+let guests = 0;
+
+// guests = guests ? guests : 10;
+guests = guests || 10;
+
+// console.log(guests);
+
+// ###############
+// if (restaurant.orderPizza){
+//   restaurant.orderPizza('mushrooms', 'onion', 'Ruha', 'spinach')
+// }
+// restaurant.orderPizza &&
+//   restaurant.orderPizza('mushrooms', 'onion', 'Ruha', 'spinach');
+
+const rest1 = {
+  resName: 'Capri',
+  numGuests: 20,
+};
+
+const rest2 = {
+  resName: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+// rest1.numGuests = rest1.numGuests || 10;
+rest1.numGuests ??= 10;
+// rest2.numGuests = rest2.numGuests || 10;
+rest2.numGuests ??= 10;
+
+console.log(rest1.numGuests);
+console.log(rest2.numGuests);
