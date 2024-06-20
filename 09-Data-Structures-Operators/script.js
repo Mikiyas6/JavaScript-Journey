@@ -111,7 +111,7 @@ const array = [...arr, ...lists];
 const anotherArray = [...array];
 // console.log(anotherArray);
 
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 // console.log(menu);
 
 const string = 'Jonas';
@@ -180,5 +180,36 @@ rest1.numGuests ??= 10;
 // rest2.numGuests = rest2.numGuests || 10;
 rest2.numGuests ??= 10;
 
-console.log(rest1.numGuests);
-console.log(rest2.numGuests);
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// const newArray = [];
+// for (const item of menu) newArray.push(item);
+// console.log(newArray);
+// for (const [index, value] of menu.entries()) {
+//   console.log(`Item  ${index + 1}: -> ${value}`);
+// }
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+// for (const day of days) {
+//   const open = restaurant?.openingHours[day]?.open ?? 'Sike!';
+//   const close = restaurant?.openingHours[day]?.close ?? 'OOps!';
+//   console.log(`On ${day}, We open at ${open} AM.`);
+//   console.log(`On ${day}, We close at ${close} PM.`);
+// }
+
+const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
+
+// console.log(users[0]?.name ?? 'Error');
+
+// (users.length > 0 && console.log(users[0].name)) ||
+//   console.log('user array empty');
+
+// const properties = Object.keys(restaurant.openingHours);
+// for (const day of properties) console.log(day);
+
+const entries = Object.entries(restaurant.openingHours);
+console.log(entries);
+
+// for (const [day, { open, close }] of entries) {
+//   console.log(`On ${day}, we open at ${open} AM and close at ${close} PM`);
+// }
