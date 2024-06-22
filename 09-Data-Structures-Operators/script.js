@@ -249,7 +249,9 @@ const time = 21;
 // console.log(rest.get(time >= rest.get('open') && time < rest.get('close')));
 
 rest.set(document.querySelector('h6'), 'Really');
-console.log(rest);
+const restArray = [...rest];
+// console.log(rest);
+// console.log(restArray);
 
 const question = new Map([
   ['question', 'What is the best programming language in the world'],
@@ -260,3 +262,15 @@ const question = new Map([
   [true, 'Correct 🎉'],
   [false, 'Try again!'],
 ]);
+
+for (const [key, value] of question) {
+  console.log(key, value);
+}
+
+// alert(question.get('question'));
+// const answer = Number(prompt(`What's your answer?`));
+// alert(question.get(question.get('correct') === answer));
+
+// We can convert map into arrays by
+// const questionArray = [...question];
+// console.log(questionArray);
