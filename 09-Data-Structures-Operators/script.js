@@ -208,8 +208,55 @@ const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
 // for (const day of properties) console.log(day);
 
 const entries = Object.entries(restaurant.openingHours);
-console.log(entries);
+// console.log(entries);
 
 // for (const [day, { open, close }] of entries) {
 //   console.log(`On ${day}, we open at ${open} AM and close at ${close} PM`);
 // }
+
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+// console.log(ordersSet);
+// console.log(ordersSet.has('pinata'));
+// console.log(ordersSet.add('belluci'));
+// console.log(ordersSet.delete('Risotto'));
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const newStaff = new Set(staff);
+const finalStaff = [...newStaff];
+newStaff.delete('Waiter');
+// console.log(newStaff);
+
+const rest = new Map();
+
+rest
+  .set('name', 'Classico Italiano')
+  .set(1, 'Frienze Italy')
+  .set(2, 'Lisbon Portugal')
+  .set('categories', ['Italian', 'Pizzeria', 'Vegitarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+const time = 21;
+// console.log(rest.get(time >= rest.get('open') && time < rest.get('close')));
+
+rest.set(document.querySelector('h6'), 'Really');
+console.log(rest);
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct 🎉'],
+  [false, 'Try again!'],
+]);
