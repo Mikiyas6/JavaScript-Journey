@@ -264,7 +264,7 @@ const question = new Map([
 ]);
 
 for (const [key, value] of question) {
-  console.log(key, value);
+  // console.log(key, value);
 }
 
 // alert(question.get('question'));
@@ -274,3 +274,31 @@ for (const [key, value] of question) {
 // We can convert map into arrays by
 // const questionArray = [...question];
 // console.log(questionArray);
+
+const arline = 'TAP air Portugal';
+// console.log(arline.slice(-8, 14));
+const checkMiddleSeat = function (seat) {
+  const lastCharacter = seat.at(-1);
+  // console.log(
+  //   `It's ${
+  //     lastCharacter === 'B' || lastCharacter === 'E' ? '' : 'not '
+  //   }a middle seat`
+  // );
+};
+checkMiddleSeat('11c');
+const passenger = 'jOnAS';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower.at(0).toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+
+// console.log(announcement.replaceAll('door', 'gate'));
+const maskCreditCard = function (number) {
+  number = String(number);
+  const size = number.length;
+  console.log(number.slice(-4).padStart(size, '*'));
+};
+maskCreditCard(433343934957);
+maskCreditCard('894590541095789547892134987');
