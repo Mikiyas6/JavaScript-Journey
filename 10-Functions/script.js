@@ -23,19 +23,18 @@
 const flight = 'LH234';
 const jonas = {
   name: 'Jonas Schmedthmann',
-  passport: 32343234324,;
-}
-const checkIn = function(flightNum,passenger){
-  flightNum = 'LH999'
-  passenger.name = 'Mr. '+passenger.name
+  passport: 32343234324,
+};
+const checkIn = function (flightNum, passenger) {
+  flightNum = 'LH999';
+  passenger.name = 'Mr. ' + passenger.name;
 
-  if (passenger.passport === 32343234324){
-    alert('Check in')
+  if (passenger.passport === 32343234324) {
+    alert('Check in');
+  } else {
+    alert('Wrong Passport');
   }
-  else{
-    alert('Wrong Passport')
-  }
-}
+};
 // checkIn(flight,jonas)
 // console.log(flight);
 // console.log(jonas);
@@ -44,8 +43,29 @@ const checkIn = function(flightNum,passenger){
 // const flightNum = flight
 // const passenger = jonas
 
-const newPassport = function(person){
-  person.passport = Math.trunc(Math.random() * 10000000000000)
-}
-newPassport(jonas)
-checkIn(flight,jonas)
+const newPassport = function (person) {
+  person.passport = Math.trunc(Math.random() * 10000000000000);
+};
+// newPassport(jonas)
+// checkIn(flight,jonas)
+
+const oneWord = function (str) {
+  return str.replaceAll(' ', '');
+};
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+const transformer = function (str, fn) {
+  console.log(`Transformed String: ${fn(str)}`);
+  console.log(`${fn.name} is the name of the function that was passed`);
+};
+// transformer('Javascript is the best!', upperFirstWord);
+// transformer('Javascript is the best!', oneWord);
+
+const high5 = function () {
+  alert('🖐');
+};
+document.body.addEventListener('click', high5);
+
+['Jonas', 'Martha', 'Adam'].forEach(high5);
