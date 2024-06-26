@@ -66,7 +66,7 @@ const transformer = function (str, fn) {
 const high5 = function () {
   alert('🖐');
 };
-document.body.addEventListener('click', high5);
+// document.body.addEventListener('click', high5);
 
 // ['Jonas', 'Martha', 'Adam'].forEach(high5);
 
@@ -78,4 +78,36 @@ document.body.addEventListener('click', high5);
 const greet = greeting => name => alert(`${greeting} ${name}`);
 
 const greeter = greet('Hey');
-greeter('Mikiyas');
+// greeter('Mikiyas');
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+};
+
+const eurowings = {
+  name: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = function (flightNum, name) {
+  console.log(
+    `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+  );
+  this.bookings.push({
+    flight: `${this.iataCode}${flightNum}`,
+    name,
+  });
+};
+
+book.call(eurowings, 239, 'Mikiyas Teowodroes');
+book.call(eurowings, 635, 'John Smith');
+
+// eurowings.book(239, 'Mikiyas Teowodroes');
+// eurowings.book(635, 'John Smith');
+console.log(eurowings);
+
+//
+// The call method manuiplates the this keyword
