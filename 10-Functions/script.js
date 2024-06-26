@@ -102,12 +102,47 @@ const book = function (flightNum, name) {
   });
 };
 
-book.call(eurowings, 239, 'Mikiyas Teowodroes');
-book.call(eurowings, 635, 'John Smith');
+// book.call(eurowings, 239, 'Mikiyas Teowodroes');
+// book.call(eurowings, 635, 'John Smith');
 
 // eurowings.book(239, 'Mikiyas Teowodroes');
 // eurowings.book(635, 'John Smith');
-console.log(eurowings);
+// console.log(eurowings);
 
 //
-// The call method manuiplates the this keyword
+// The call method defines the this keyword of a function
+
+const bookEw = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+// const bookLX = book.bind(swiss);
+
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes += 1;
+  console.log(this.planes);
+};
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// Partial Application
+const addTax = (rate, value) => value + value * rate;
+// console.log(addTax(0.1, 200));
+
+// const addVat = addTax.bind(undefined, 0.23);
+
+// console.log(addVat(200));
+
+// const addVat = () => addTax.bind(undefined, 0.23);
+// console.log(addVat()(200));
+
+const addVat = () => addTax;
+console.log(addVat()(0.23, 200));
+
+const addTaxRate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+console.log(addTaxRate(0.23)(200));
