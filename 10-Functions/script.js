@@ -145,4 +145,10 @@ const addTaxRate = function (rate) {
     return value + value * rate;
   };
 };
-console.log(addTaxRate(0.23)(200));
+// console.log(addTaxRate(0.23)(200));
+// IIFE
+(function () {
+  console.log('Try it');
+})();
+
+(() => console.log('Fire'))();
