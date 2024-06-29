@@ -152,3 +152,4 @@ const addTaxRate = function (rate) {
 })();
 
 (() => console.log('Fire'))();
+(() => console.log('Fire'))();
