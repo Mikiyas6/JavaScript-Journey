@@ -138,7 +138,7 @@ const addTax = (rate, value) => value + value * rate;
 // console.log(addVat()(200));
 
 const addVat = () => addTax;
-console.log(addVat()(0.23, 200));
+// console.log(addVat()(0.23, 200));
 
 const addTaxRate = function (rate) {
   return function (value) {
@@ -148,8 +148,40 @@ const addTaxRate = function (rate) {
 // console.log(addTaxRate(0.23)(200));
 // IIFE
 (function () {
-  console.log('Try it');
+  // console.log('Try it');
 })();
 
-(() => console.log('Fire'))();
-(() => console.log('Fire'))();
+// (() => console.log('Fire'))();
+
+let f;
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+h();
+f();
+console.dir(f);
+
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+  setTimeout(function () {
+    console.log(`we are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+boardPassengers(180, 3);
