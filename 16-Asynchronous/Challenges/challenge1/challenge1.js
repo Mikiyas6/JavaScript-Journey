@@ -36,7 +36,7 @@ const getJSON = function (url, errorMsg = 'Something went wrong') {
       throw new Error(`${errorMsg}. (${response.status})`);
     }
     if (response.status === 304) {
-      throw new Error(`${'Reloded Too Fast'}. (${response.status})`);
+      throw new Error(`${'Reloaded Too Fast'}. (${response.status})`);
     }
     return response.json();
   });
