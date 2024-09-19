@@ -73,7 +73,7 @@ I believe that the best way to learn programming is by doing, which is why I’m
 I’m continuously updating this repository as I move forward in my JavaScript journey. Next, I plan to focus on:
 
   - Mastering JavaScript frameworks like React and Vue
-      - Check out My React Journey Repo [Github-link](https://github.com/Mikiyas6/REACT-Journey)
+      - Check out My React Journey Repo [React-Journey](https://github.com/Mikiyas6/REACT-Journey)
   - Deepening my understanding of Node.js and backend development
   - Working on full-stack JavaScript projects
 ## Let's Connect! 🌐
